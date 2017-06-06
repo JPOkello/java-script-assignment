@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+    <title>REST Sniffer</title>
+    <!-- Le styles -->
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+  	<script type="text/template" id="provider_entry">
+	    <tr>
+          <td><label class="checkbox"><input id="chk_{{ pid }}" type="checkbox" {% if checked %} checked="checked" {% endif %}></label></td>
+          <td><div id="name_{{ pid }}" style="white-space: nowrap" contenteditable="true">{{ name }}</div></td>
+          <td><div id="endpoint_{{ pid }}" style="white-space: nowrap" contenteditable="true">{{ endpoint }}</div></td>
+          <td>
+        	<div class="btn-group dropup">
+        	  <button class="btn">Add Action</button>
+        	  <button class="btn dropdown-toggle" data-toggle="dropdown">
+        	    <span class="caret"></span>
+        	  </button>
+        	  <ul class="dropdown-menu">
+        	   	<li><a href="#">Monitor with Mixpanel.com</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+        	  </ul>
+        	</div>
+        </td>
+    </tr>
+	</script>   
+
+    <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body style="width: 500px">
+<br/><h2>REST Sniffer</h2>
+<div id="alert_message" class="alert alert-info" style="position: absolute; top: 10px;width: 230px;float: right;right: 10px;" >
+  <button id="alert_close" type="button" class="close" data-dismiss="alert">&times;</button>
+  <b>Heads up! </b>Define your own endpoint to sniff around your API. <button class="btn">Start!</button>
+</div>
+<b><i>Sniff your REST API!</i></b><br/>
+<br/>
+REST Sniffer is a tool that assists developers as well as non-technical users to better understand exposed APIs (Application Protocol Interface). As nowdays RESTful APIs follow similar guidelines, it is possible to monitor and formalize pre-defined Web services.
+<br/>
+<table class="table">
+	<thead>
+	<tr>
+      <td width="5%"></td>
+      <td width="20%">Provider</td>
+      <td width="40%">Endpoint</td>
+      <td></td>
+	</tr>
+	</thead>
+  <tbody id="providers_table">
+  </tbody>
+</table>
+<br/>
+<div style="margin: -20px">
+	<form name="myform" class="well form-inline" style="padding-top: 10px; padding-bottom: 10px">
+	  <input type="text" class="input-small" style="visibility: hidden; width: 20px">
+	  <input id="api_name" type="text" class="input-small" placeholder="Name">
+	  <input id="api_endpoint" type="text" style="width: 200px" class="input-small" placeholder="Endpoint">
+	  <input type="text" class="input-small" style="visibility: hidden; width: 10px">
+	  <button id="btnCreate" type="submit" class="btn">Create!</button>
+	</form>
+</div>
+
+	<!-- Le javascript
+    ================================================== -->
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/ga.js"></script>
+	<script type="text/javascript" src="lib/ashe.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="lib/underscore.js"></script>
+	<script type="text/javascript" src="lib/backbone.js"></script>
+	<script type="text/javascript" src="lib/URI.js"></script>
+	<script type="text/javascript" src="lib/shorten.js"></script>
+	<script type="text/javascript" src="lib/moment.js"></script>
+    <script type="text/javascript" src="lib/popup.js"></script>
+
+</body>
+</html>
